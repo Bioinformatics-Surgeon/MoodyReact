@@ -11,6 +11,8 @@ const App = () => (
   <BrowserRouter>
     <div>
       <CssBaseline />
+      <ButtonAppBar />
+
       <header>
         <nav>
           <Link to={`/`}>Home</Link>
@@ -18,10 +20,10 @@ const App = () => (
           <Link to={`/nav`}>NavTime</Link>
         </nav>
       </header>
+
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/search" component={SearchPage} />
-        <Route exact path="/nav" component={ButtonAppBar} />
         <Route component={Error} />
       </Switch>
     </div>
