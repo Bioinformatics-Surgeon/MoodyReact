@@ -13,14 +13,6 @@ const App = () => (
       <CssBaseline />
       <ButtonAppBar />
 
-      <header>
-        <nav>
-          <Link to={`/`}>Home</Link>
-          <Link to={`/search`}>Search</Link>
-          <Link to={`/nav`}>NavTime</Link>
-        </nav>
-      </header>
-
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/search" component={SearchPage} />
