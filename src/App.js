@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import HomePage from './components/HomePage/HomePage';
+import SearchPage from './components/SearchPage/SearchPage';
+import ButtonAppBar from './components/ButtonAppBar/ButtonAppBar';
+import Error from './components/Error/Error';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <BrowserRouter>
+    <div>
+      <CssBaseline />
+      <header>
+        <nav>
+          <Link to={`/`}>Home</Link>
+          <Link to={`/search`}>Search</Link>
+          <Link to={`/nav`}>NavTime</Link>
+        </nav>
+      </header>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/search" component={SearchPage} />
+        <Route exact path="/nav" component={ButtonAppBar} />
+        <Route component={Error} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
 
 export default App;
